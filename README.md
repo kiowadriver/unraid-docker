@@ -1,12 +1,12 @@
-Application
+**Application**
 
 N/A
 
-Description
+**Description**
 
 unRAID Docker Templates for Docker images in the "mitchellriley" repository.
 
-Usage
+**Usage**
 
 Firstly you need to be running unRAID ver 6.0.0 or later, once installed follow the instructions below:-
 
