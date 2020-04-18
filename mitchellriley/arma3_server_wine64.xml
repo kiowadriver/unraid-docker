@@ -1,100 +1,164 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Containers>
-  <TemplateURL>https://raw.githubusercontent.com/mitchellriley/docker-templates/master/mitchellriley/arma3_server_wine64.xml</TemplateURL>
-  <Beta>False</Beta>
-  <Category>GameServers:</Category>
-  <Name>arma3_server_wine64</Name>
-  <Description>
-    [b][u][span style='color: #E80000;']Description[/span][/u][/b][br]
-    This Docker will download and install SteamCMD. It will also install ArmA III ontop of Wine64 and run it. To run this container you must provide a valid Steam username and password since the game needs a valid account to download (NOTICE: You must disable Steam Guard otherwise this container will not work, Steam recommens to make a new Steam account for dedicated servers). Password Notice: The Docker will automaticly download a server.cfg preconfigured with ServerName: Docker Server and Password: Docker ATTENTION: First Startup can take very long since it downloads the gameserver files! Update Notice: Simply restart the container if a newer version of the game is available. You can also run multiple servers with only one SteamCMD directory![br][br]
-    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
-    [b]/config[/b] This is where Minecraft will store it's configuration file, database and logs.[br][br]
-    [b][u][span style='color: #E80000;']Documentation[/span][/u][/b][br]
-    https://github.com/mitchellriley/documentation[br][br]
-  </Description>
-  <Overview>
-    This Docker will download and install SteamCMD. It will also install ArmA III ontop of Wine64 and run it. To run this container you must provide a valid Steam username and password since the game needs a valid account to download (NOTICE: You must disable Steam Guard otherwise this container will not work, Steam recommens to make a new Steam account for dedicated servers). Password Notice: The Docker will automaticly download a server.cfg preconfigured with ServerName: Docker Server and Password: Docker ATTENTION: First Startup can take very long since it downloads the gameserver files! Update Notice: Simply restart the container if a newer version of the game is available. You can also run multiple servers with only one SteamCMD directory!
-  </Overview>
-  <Support>https://forums.unraid.net/topic/84880-support-mitchellriley-arma3_server_wine64/</Support>
-  <Registry>https://registry.hub.docker.com/r/mitchellriley/arch-arma3_server_wine64/</Registry>
-  <GitHub>https://github.com/mitchellriley/arch-arma3_server_wine64</GitHub>
-  <Repository>mitchellriley/arch-arma3_server_wine64</Repository>
-  <Project>https://arma3.com/</Project>
-  <BindTime>true</BindTime>
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ArmA3_Wine64</Name>
+  <Repository>mitchellriley/arma3_server_wine64</Repository>
+  <Registry>https://registry.hub.docker.com/r/mitchellriley/arma3_server_wine64/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
   <Privileged>false</Privileged>
+  <Support></Support>
+  <Project>https://arma3.com/</Project>
+  <Overview>This Docker will download and install SteamCMD. It will also install ArmA III and run it.&#xD;
+To run this container you must provide a valid Steam username and password since the game needs a valid account to download (NOTICE: You must disable Steam Guard otherwise this container will not work, Steam recommens  to make a new Steam account for dedicated servers).&#xD;
+&#xD;
+Password Notice: The Docker will automaticly download a server.cfg preconfigured with ServerName: Docker Server and Password: Docker&#xD;
+&#xD;
+ATTENTION: First Startup can take very long since it downloads the gameserver files!&#xD;
+&#xD;
+Update Notice: Simply restart the container if a newer version of the game is available.&#xD;
+&#xD;
+You can also run multiple servers with only one SteamCMD directory!</Overview>
+  <Category>GameServers:</Category>
+  <WebUI/>
+  <TemplateURL>false</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/mitchellriley/docker-templates/master/mitchellriley/images/arma3_server_wine64-icon.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <Description>This Docker will download and install SteamCMD. It will also install ArmA III and run it.&#xD;
+To run this container you must provide a valid Steam username and password since the game needs a valid account to download (NOTICE: You must disable Steam Guard otherwise this container will not work, Steam recommens  to make a new Steam account for dedicated servers).&#xD;
+&#xD;
+Password Notice: The Docker will automaticly download a server.cfg preconfigured with ServerName: Docker Server and Password: Docker&#xD;
+&#xD;
+ATTENTION: First Startup can take very long since it downloads the gameserver files!&#xD;
+&#xD;
+Update Notice: Simply restart the container if a newer version of the game is available.&#xD;
+&#xD;
+You can also run multiple servers with only one SteamCMD directory!</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
       <Port>
         <HostPort>2344</HostPort>
         <ContainerPort>2344</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+	  <Port>
+        <HostPort>2345</HostPort>
+        <ContainerPort>2345</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
 	  <Port>
-        <HostPort>2344</HostPort>
-        <ContainerPort>2344</ContainerPort>
-        <Protocol>udp</Protocol>
-      </Port>
-	  <Port>
         <HostPort>2302</HostPort>
-        <ContainerPort>2303</ContainerPort>
+        <ContainerPort>2302</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>2302</HostPort>
+        <ContainerPort>2302</ContainerPort>
         <Protocol>udp</Protocol>
       </Port>
-	  <Port>
+      <Port>
         <HostPort>2303</HostPort>
         <ContainerPort>2303</ContainerPort>
         <Protocol>udp</Protocol>
       </Port>
-	  <Port>
+      <Port>
         <HostPort>2304</HostPort>
         <ContainerPort>2304</ContainerPort>
         <Protocol>udp</Protocol>
       </Port>
-	  <Port>
+      <Port>
         <HostPort>2305</HostPort>
-        <ContainerPort>2304</ContainerPort>
+        <ContainerPort>2305</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>2306</HostPort>
+        <ContainerPort>2306</ContainerPort>
         <Protocol>udp</Protocol>
       </Port>
     </Publish>
   </Networking>
-  <Environment>
-    <Variable>
-      <Name>MAX_BACKUPS</Name>
-      <Value>10</Value>
-    </Variable>
-    <Variable>
-      <Name>JAVA_INITIAL_HEAP_SIZE</Name>
-      <Value>512M</Value>
-    </Variable>
-    <Variable>
-      <Name>JAVA_MAX_HEAP_SIZE</Name>
-      <Value>1024M</Value>
-    </Variable>
-    <Variable>
-      <Name>JAVA_MAX_THREADS</Name>
-      <Value>1</Value>
-    </Variable>
-    <Variable>
-      <Name>UMASK</Name>
-      <Value>000</Value>
-    </Variable>
-    <Variable>
-      <Name>PUID</Name>
-      <Value>99</Value>
-    </Variable>
-    <Variable>
-      <Name>PGID</Name>
-      <Value>100</Value>
-    </Variable>
-  </Environment>
   <Data>
     <Volume>
-      <HostDir>/mnt/cache/appdata/config</HostDir>
-      <ContainerDir>/config</ContainerDir>
+      <HostDir>/mnt/user/appdata/steamcmd</HostDir>
+      <ContainerDir>/serverdata/steamcmd</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/arma3/gamefiles</HostDir>
+      <ContainerDir>/serverdata/serverfiles</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/arma3/profiles</HostDir>
+      <ContainerDir>/serverdata/.local/share</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <Banner></Banner>
-  <Icon>https://raw.githubusercontent.com/mitchellriley/docker-templates/master/mitchellriley/images/arma3_server_wine64-icon.png</Icon>
-  <ExtraParams></ExtraParams>
-</Containers>
+  <Environment>
+    <Variable>
+      <Value>233780</Value>
+      <Name>GAME_ID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>-config=server.cfg -mod=</Value>
+      <Name>GAME_PARAMS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>USERNAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>PASSWRD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>VALIDATE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>2302</Value>
+      <Name>GAME_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>UID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>GID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="SteamCMD" Target="/serverdata/steamcmd" Default="" Mode="rw" Description="Container Path: /serverdata/steamcmd" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/steamcmd</Config>
+  <Config Name="ServerFiles" Target="/serverdata/serverfiles" Default="" Mode="rw" Description="Container Path: /serverdata/serverfiles" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/arma3/gamefiles</Config>
+  <Config Name="GAME_ID" Target="GAME_ID" Default="" Mode="" Description="The GAME_ID that the container download at startup.&#13;&#10;(https://developer.valvesoftware.com/wiki/Dedicated_Servers_List)" Type="Variable" Display="always" Required="true" Mask="false">233780</Config>
+  <Config Name="GAME_PARAMS" Target="GAME_PARAMS" Default="" Mode="" Description="Enter your start up commands for the server.&#13;&#10;Note: To change the Port of the server please click on 'Show more settings' button, don't forget to change the other ports." Type="Variable" Display="always" Required="true" Mask="false">-config=server.cfg -mod=</Config>
+  <Config Name="UDP GamePort" Target="2344" Default="" Mode="tcp" Description="UDP Gameport (BattlEye)" Type="Port" Display="always" Required="true" Mask="false">2344</Config>
+  <Config Name="TCP GamePort" Target="2345" Default="" Mode="tcp" Description="TCP Gameport (BattlEye 2)" Type="Port" Display="always" Required="true" Mask="false">2345</Config>
+  <Config Name="TCP GamePort" Target="2302" Default="" Mode="tcp" Description="TCP Gameport (if you need another port, please delete this entry and create a new TCP Port with the required port number, also don't forget to click an 'Show more settings ...' and change the port number, never forget that ArmA III uses the starting port number with TCP and UDP and the following 4 ascendant port numbers UDP)" Type="Port" Display="always" Required="true" Mask="false">2302</Config>
+  <Config Name="UDP Game Port" Target="2302" Default="" Mode="udp" Description="Same as TCP Game Port" Type="Port" Display="always" Required="true" Mask="false">2302</Config>
+  <Config Name="UDP Steam Querry Port" Target="2303" Default="" Mode="udp" Description="UDP Game Port +1" Type="Port" Display="always" Required="true" Mask="false">2303</Config>
+  <Config Name="UDP Steam Master Port" Target="2304" Default="" Mode="udp" Description="UDP Game Port +2" Type="Port" Display="always" Required="true" Mask="false">2304</Config>
+  <Config Name="UDP VON Port" Target="2305" Default="" Mode="udp" Description="UDP Game Port +3" Type="Port" Display="always" Required="true" Mask="false">2305</Config>
+  <Config Name="UDP BattlEye Traffic" Target="2306" Default="" Mode="udp" Description="UDP Game Port +4" Type="Port" Display="always" Required="true" Mask="false">2306</Config>
+  <Config Name="Steam-Username" Target="USERNAME" Default="" Mode="" Description="Your Steam username goes here if you want to install a game that needs a valid account, otherwise leave it blank (ATTENTION: You have to disable Steam Guard)." Type="Variable" Display="always-hide" Required="true" Mask="false"></Config>
+  <Config Name="Steam-Password" Target="PASSWRD" Default="" Mode="" Description="Your Steam password goes here if you want to install a game that needs a valid account, otherwise leave it blank (ATTENTION: You have to disable Steam Guard)." Type="Variable" Display="always-hide" Required="true" Mask="true"></Config>
+  <Config Name="Validate Installation" Target="VALIDATE" Default="" Mode="" Description="Set the Variable to 'true' if you want to validate the installation otherwise leave it blank." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
+  <Config Name="Profiles" Target="/serverdata/.local/share" Default="" Mode="rw" Description="/serverdata/.local/share" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/arma3/profiles</Config>
+  <Config Name="GAME_PORT" Target="GAME_PORT" Default="" Mode="" Description="Container Variable: GAME_PORT" Type="Variable" Display="advanced" Required="true" Mask="false">2302</Config>
+  <Config Name="UID" Target="UID" Default="" Mode="" Description="Container Variable: UID" Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
+  <Config Name="GID" Target="GID" Default="" Mode="" Description="Container Variable: GID" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
+</Container>
