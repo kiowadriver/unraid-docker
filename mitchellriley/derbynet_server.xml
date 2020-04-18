@@ -39,7 +39,7 @@ update description&#xD;
   <Data>
     <Volume>
       <HostDir>/mnt/cache/appdata/derbynet_server/config</HostDir>
-      <ContainerDir>/etc/derbynet</ContainerDir>
+      <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
@@ -72,7 +72,7 @@ update description&#xD;
   </Environment>
   <Labels/>
   <Config Name="UDP Webserver port" Target="8081" Default="" Mode="udp" Description="UDP Webserver Port" Type="Port" Display="always" Required="true" Mask="false">8081</Config>
-  <Config Name="Configuration directory" Target="/etc/derbynet" Default="" Mode="rw" Description="/etc/derbyent" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/derbynet_server/config</Config>
+  <Config Name="Configuration directory" Target="/config" Default="" Mode="rw" Description="Server configuration files" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/derbynet_server/config</Config>
   <Config Name="Timer System Username" Target="TIMER_USER" Default="Timer" Mode="" Description="The username for the service running derbynet on the device connected to your track. Default is Timer" Type="Variable" Display="always-hide" Required="true" Mask="false"></Config>
   <Config Name="Timer System Password" Target="TIMER_PASSWORD" Default="" Mode="" Description="The password the track timer device will use to connect to this server. Default is blank but you should change this!" Type="Variable" Display="always-hide" Required="true" Mask="true"></Config>
   <Config Name="UID" Target="UID" Default="" Mode="" Description="Container Variable: UID" Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
