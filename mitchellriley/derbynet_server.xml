@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Derbynet_Server</Name>
+  <Repository>mitchellriley/derbynet_server</Repository>
+  <Registry>https://registry.hub.docker.com/r/mitchellriley/derbynet_server</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support></Support>
+  <Project>http://jeffpiazza.github.io/derbynet/</Project>
+  <Overview>DerbyNet is the new standard in race management software for Pinewood Derby events. It's free, and it's open source. With DerbyNet, multiple browsers connect to a web server running on your laptop or in the cloud.&#xD;
+Password Notice: The Docker will automaticly download a server.cfg preconfigured with ServerName: Docker Server and Password: Docker&#xD;
+&#xD;
+Update Notice: Simply restart the container if a newer version of the server is available.&#xD;
+</Overview>
+  <Category>Other:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/mitchellriley/unraid-docker/master/mitchellriley/derberynet_server.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/mitchellriley/unraid-docker/master/mitchellriley/images/derbynet_server.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <Description>update description&#xD;
+update description&#xD;
+&#xD;
+</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8081</HostPort>
+        <ContainerPort>8081</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/derbynet_server/config</HostDir>
+      <ContainerDir>/etc/derbynet</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>http://localhost/derbynet</Value>
+      <Name>DERBYNET_SERVER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Timer</Value>
+      <Name>TIMER_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>TIMER_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>UID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>GID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="UDP Webserver port" Target="8081" Default="" Mode="udp" Description="UDP Webserver Port" Type="Port" Display="always" Required="true" Mask="false">8081</Config>
+  <Config Name="Configuration directory" Target="/etc/derbynet" Default="" Mode="rw" Description="/etc/derbyent" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/derbynet_server/config</Config>
+  <Config Name="Timer System Username" Target="TIMER_USER" Default="Timer" Mode="" Description="The username for the service running derbynet on the device connected to your track. Default is Timer" Type="Variable" Display="always-hide" Required="true" Mask="false"></Config>
+  <Config Name="Timer System Password" Target="TIMER_PASSWORD" Default="" Mode="" Description="The password the track timer device will use to connect to this server. Default is blank but you should change this!" Type="Variable" Display="always-hide" Required="true" Mask="true"></Config>
+  <Config Name="UID" Target="UID" Default="" Mode="" Description="Container Variable: UID" Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
+  <Config Name="GID" Target="GID" Default="" Mode="" Description="Container Variable: GID" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
+</Container>
