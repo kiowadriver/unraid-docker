@@ -22,7 +22,7 @@ You can also run multiple servers with only one SteamCMD directory!</Overview>
   <Category>GameServers:</Category>
   <WebUI/>
   <TemplateURL>false</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/mitchellriley/docker-templates/master/mitchellriley/images/arma3_server_wine64-icon.png</Icon>
+  <Icon>https://raw.githubusercontent.com/mitchellriley/docker-templates/master/mitchellriley/images/arma3_server.png</Icon>
   <ExtraParams>--restart=unless-stopped</ExtraParams>
   <PostArgs/>
   <CPUset/>
