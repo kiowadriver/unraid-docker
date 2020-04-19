@@ -4,7 +4,7 @@ N/A
 
 **Description**
 
-unRAID Docker Templates for Docker images in the "mitchellriley" repository.
+unRAID Docker Templates for Docker images in the "kiowadriver" repository.
 
 **Usage**
 
