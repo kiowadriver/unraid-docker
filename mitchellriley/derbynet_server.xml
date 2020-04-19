@@ -30,12 +30,12 @@
       <Port>
         <HostPort>8070</HostPort>
         <ContainerPort>80</ContainerPort>
-        <Protocol>udp</Protocol>
+        <Protocol>tcp</Protocol>
       </Port>
       <Port>
         <HostPort>8072</HostPort>
         <ContainerPort>443</ContainerPort>
-        <Protocol>udp</Protocol>
+        <Protocol>tcp</Protocol>
       </Port>
     </Publish>
   </Networking>
@@ -59,8 +59,8 @@
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Webserver Port" Target="80" Default="8070" Mode="udp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">8070</Config>
-  <Config Name="Secure Webserver Port (Self Signed Certs)" Target="443" Default="8072" Mode="udp" Description="The docker has a secure webportal but the certificates are self signed.  " Type="Port" Display="always" Required="false" Mask="false">8072</Config>
+  <Config Name="Webserver Port" Target="80" Default="8070" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">8070</Config>
+  <Config Name="Secure Webserver Port (Self Signed Certs)" Target="443" Default="8072" Mode="tcp" Description="The docker has a secure webportal but the certificates are self signed.  " Type="Port" Display="always" Required="false" Mask="false">8072</Config>
   <Config Name="Username" Target="TIMER_USERNAME" Default="Timer" Mode="" Description="The racetrack shoud have a remote device (ex: raspberryPI) running derbynet timer.  The timer device will access the server using this username." Type="Variable" Display="always" Required="true" Mask="false">Timer</Config>
   <Config Name="Password" Target="TIMER_PASSWORD" Default="" Mode="" Description="The racetrack shoud have a remote device (ex: raspberryPI) running derbynet timer.  The timer device will access the server using this password.  Make sure you secure your server with a password!" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="Config" Target="/config" Default="/mnt/cache/appdata/derbynet_server/config" Mode="rw" Description="The location of the server config files" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/derbynet_server/config</Config>
