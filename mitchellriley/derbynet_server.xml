@@ -12,7 +12,7 @@
   <Overview>DerbyNet is the new standard in race management software for Pinewood Derby events. It's free, and it's open source. With DerbyNet, multiple browsers connect to a web server running on your laptop or in the cloud.&#xD;
 </Overview>
   <Category>Cloud: Tools: Other:</Category>
-  <WebUI>https://[IP]:[PORT:8050]</WebUI>
+  <WebUI>http://[IP]:[PORT:8050]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/mitchellriley/unraid-docker/master/mitchellriley/images/derbynet_server.png</Icon>
   <ExtraParams/>
