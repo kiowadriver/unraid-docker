@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support/>
+  <Support>https://forums.unraid.net/topic/91382-support-derbynet-server-docker/</Support>
   <Project>http://jeffpiazza.github.io/derbynet/</Project>
   <Overview>DerbyNet is the new standard in race management software for Pinewood Derby events. It's free, and it's open source. With DerbyNet, multiple browsers connect to a web server running on your laptop or in the cloud.&#xD;
 </Overview>
