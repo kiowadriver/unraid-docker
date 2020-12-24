@@ -149,7 +149,7 @@ To test notifications two methods exist:&#xD;
       <Name>SHOW_ONLY_SERIES</Name>
       <Mode/>
     </Variable>
-	    <Variable>
+    <Variable>
       <Value/>
       <Name>SHOW_ONLY_MODELS</Name>
       <Mode/>
